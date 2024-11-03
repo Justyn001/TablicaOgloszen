@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"pl.polsl.justyn.rojkowski.tablicaogloszen"},{"l":"pl.polsl.justyn.rojkowski.tablicaogloszen.controller"},{"l":"pl.polsl.justyn.rojkowski.tablicaogloszen.exceptions"},{"l":"pl.polsl.justyn.rojkowski.tablicaogloszen.model"},{"l":"pl.polsl.justyn.rojkowski.tablicaogloszen.view"}];updateSearchResults();
