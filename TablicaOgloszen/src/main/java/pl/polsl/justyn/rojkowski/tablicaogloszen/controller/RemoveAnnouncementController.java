@@ -3,6 +3,8 @@ package pl.polsl.justyn.rojkowski.tablicaogloszen.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 import pl.polsl.justyn.rojkowski.tablicaogloszen.exceptions.InvalidInputException;
 import pl.polsl.justyn.rojkowski.tablicaogloszen.model.TableModel;
 import javafx.scene.control.Alert;
@@ -11,6 +13,9 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * The controller for removing announcements.
  */
+
+@Getter
+@Setter
 public class RemoveAnnouncementController {
 
     @FXML

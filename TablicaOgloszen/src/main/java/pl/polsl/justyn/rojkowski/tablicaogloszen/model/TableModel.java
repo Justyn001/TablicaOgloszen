@@ -1,7 +1,9 @@
 package pl.polsl.justyn.rojkowski.tablicaogloszen.model;
 
+import lombok.*;
 import pl.polsl.justyn.rojkowski.tablicaogloszen.exceptions.InvalidInputException;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Represents the model that stores messages (advertisements) in a list.
@@ -9,6 +11,10 @@ import java.util.ArrayList;
  * @version 1.0
  * @author Justyn Rojkowski
  */
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
 public class TableModel {
 
     /**
@@ -30,6 +36,10 @@ public class TableModel {
      * @return the list of messages
      */
     public ArrayList<String> getArray() {
+        //lambda
+        table = (ArrayList<String>) table.stream()
+                .map(announcement -> announcement + ".") // Dodajemy kropkę na końcu każdego ogłoszenia
+                .collect(Collectors.toList());
         return table;
     }
 
@@ -41,6 +51,12 @@ public class TableModel {
     public void addMessage(String messageToAdd) {
         messageToAdd = table.size() + 1 +". " + messageToAdd;
         table.add(messageToAdd);
+
+        // Pętla for-each do wypisania wszystkich wiadomości
+        for (String msg : table) {
+            msg.replace(".", "");
+            //System.out.println(msg); 
+        }
     }
 
     /**
@@ -62,6 +78,13 @@ public class TableModel {
         if (index < 1 || index > getArray().size()) {
             throw new InvalidInputException("Index out of range!");
         }
+    }
+
+    // wykorzystanie strumieniowego przetwarzania danych zapisanych w kolekcjach z wykorzystaniem wyrażeń lambda.
+    public void convertMessagesToUppercase() {
+        table = (ArrayList<String>) table.stream()
+                .map(String::toUpperCase) // Przekształcamy wszystkie ogłoszenia na wielkie litery
+                .collect(Collectors.toList());
     }
 }
 

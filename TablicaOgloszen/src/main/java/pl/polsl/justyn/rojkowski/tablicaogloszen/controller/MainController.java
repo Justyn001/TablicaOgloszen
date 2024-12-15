@@ -1,5 +1,7 @@
 package pl.polsl.justyn.rojkowski.tablicaogloszen.controller;
 
+import lombok.Getter;
+import lombok.Setter;
 import pl.polsl.justyn.rojkowski.tablicaogloszen.model.TableModel;
 
 import javafx.application.Platform;
@@ -18,6 +20,9 @@ import java.io.IOException;
 /**
  * The controller for the main application view.
  */
+
+@Getter
+@Setter
 public class MainController {
 
     private TableModel tableModel;
@@ -81,6 +86,9 @@ public class MainController {
             dialogStage.initModality(Modality.APPLICATION_MODAL);
             dialogStage.setScene(new Scene(root));
             dialogStage.showAndWait();
+
+            // Wywołanie strumienia, aby przekonwertować wszystkie ogłoszenia na wielkie litery
+            tableModel.convertMessagesToUppercase();
 
             announcementsListView.getItems().setAll(tableModel.getArray());
 

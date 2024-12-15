@@ -3,11 +3,16 @@ package pl.polsl.justyn.rojkowski.tablicaogloszen.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import lombok.Getter;
+import lombok.Setter;
 import pl.polsl.justyn.rojkowski.tablicaogloszen.model.TableModel;
 
 /**
  * The controller for adding new announcements.
  */
+
+@Getter
+@Setter
 public class AnnouncementController {
 
     @FXML
